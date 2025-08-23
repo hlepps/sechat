@@ -1,0 +1,6 @@
+@seChat.Server_HostAddress = http://localhost:5093
+
+GET {{seChat.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

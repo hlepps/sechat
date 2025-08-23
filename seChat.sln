@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "sechat.client", "sechat.client\sechat.client.esproj", "{FE4EF849-7035-F0F2-2AB7-72EA3776712C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "seChat.Server", "seChat.Server\seChat.Server.csproj", "{F7B903F5-3D33-41CB-B17B-05A9A1F765DB}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE4EF849-7035-F0F2-2AB7-72EA3776712C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4EF849-7035-F0F2-2AB7-72EA3776712C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4EF849-7035-F0F2-2AB7-72EA3776712C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FE4EF849-7035-F0F2-2AB7-72EA3776712C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4EF849-7035-F0F2-2AB7-72EA3776712C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4EF849-7035-F0F2-2AB7-72EA3776712C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F7B903F5-3D33-41CB-B17B-05A9A1F765DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B903F5-3D33-41CB-B17B-05A9A1F765DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B903F5-3D33-41CB-B17B-05A9A1F765DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B903F5-3D33-41CB-B17B-05A9A1F765DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06D53EDF-CA36-4825-A86E-E8339C9254DF}
+	EndGlobalSection
+EndGlobal
