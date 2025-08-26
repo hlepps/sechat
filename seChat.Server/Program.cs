@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using seChat.Server.Data;
+using seChat.Server.Helpers;
 
 namespace seChat.Server
 {
@@ -17,9 +18,13 @@ namespace seChat.Server
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
             builder.Services.AddControllersWithViews();
+            builder.Services.AddCors();
+
             builder.Services.AddDbContextPool<UserContext>(opt =>
                 opt.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<JwtService>();
 
             var app = builder.Build();
 
@@ -33,6 +38,13 @@ namespace seChat.Server
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(opt => opt
+                .WithOrigins(new[] {"http://localhost:3000", "https://localhost:3001" }) 
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials()
+            );
 
             app.UseAuthorization();
 
