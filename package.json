@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@cloudamqp/amqp-client": "^3.2.1",
+    "amqplib": "^0.10.8",
+    "rabbitmq-client": "^5.0.5"
+  }
+}

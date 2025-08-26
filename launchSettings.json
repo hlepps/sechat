@@ -3,8 +3,12 @@
     "Docker Compose": {
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "sechat.server",
+      "composeLaunchUrl": "{Scheme}://localhost:5000",
       "serviceActions": {
-        "sechat.server": "StartDebugging"
+        "sechat.server": "StartDebugging",
+        "rabbitmq": "StartWithoutDebugging",
       }
     }
   }
