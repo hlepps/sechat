@@ -18,14 +18,54 @@ services:
       - "3001:3001"
     volumes:
       - ~/.aspnet/https:/https:ro
-  sechat.client:
-    build:
-      context: sechat.client
-      dockerfile: Dockerfile
-    image: sechat.client
-    container_name: sechat.client
-    ports:
-      - "5000:5000"
-    depends_on:
-      - sechat.server
 
+  # sechat.client:
+  #   container_name: sechat.client
+  #   build:
+  #     context: sechat.client
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "5000:5000"
+  #   depends_on:
+  #     - sechat.server
+  #   volumes:
+  #     - ./sechat.client:/app
+  #     - /app/node_modules
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=sechat
+      - RABBITMQ_DEFAULT_PASS=123
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=rootroot
+    ports:
+      - "5432:5432"
+    volumes:
+     - db:/var/lib/postgresql/data
+
+  # cassandra1:
+  #   image: cassandra:latest
+  #   container_name: cassandra1
+  #   hostname: cassandra1
+  #   ports:
+  #     - "9042:9042"
+  #   environment: &cassandra_config
+  #     CASSANDRA_SEEDS: "cassandra1"
+  #     CASSANDRA_CLUSTER_NAME: MyCluster
+  #     CASSANDRA_DC: datacenter1
+  #     CASSANDRA_RACK: rack1
+  #     CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+  #     CASSANDRA_NUM_TOKENS: 128
+  
+volumes:
+  db: 
