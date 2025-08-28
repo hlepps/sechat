@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Messenger from './components/messenger';
+import Home from "./pages/Home.tsx"
+import Login from "./pages/Login.tsx"
+import Register from "./pages/Register.tsx"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 interface Forecast {
     date: string;
@@ -12,10 +15,13 @@ interface Forecast {
 function App() {
 
     return (
-        <div>
-            <h1 id="tableLabel">sechat</h1>
-            <Messenger sender={123} receiver={321}></Messenger>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login" element={<Login/> }/>
+                <Route path="/register" element={<Register/> }/>
+                <Route path="/" element={<Home/> }/>
+            </Routes>
+        </BrowserRouter>
     );
 
 }
